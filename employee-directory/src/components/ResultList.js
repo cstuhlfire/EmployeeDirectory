@@ -2,25 +2,18 @@ import React from "react";
 
 function ResultList(props) {
   const employees = props.results;
-  let x=0;
 
-  console.log (props.results.length);
-  for (let i = 0; i < props.results.length; i++) {
-    
-    console.log(props.results[i].name.title.trim()+" "+ 
-                props.results[i].name.first.trim()+" "+
-                props.results[i].name.last.trim());
-    
-  }
-  return (
+  // let notPurchased = groceries.filter((grocery) => grocery.purchased === false)
+  let employeeRows = employees.map(employee => (
+    <li className="list-group-item" key={employee.id.value}>
+        {<img alt={employee.name.last} className="img-fluid" src={employee.picture.thumbnail} />}
+        {employee.name.first.trim()+" "+employee.name.last.trim()}
+    </li>));
+
+    return (
     
     <ul className="list-group">
-      {employees.map(employee => (
-        <li className="list-group-item" key={x++}>
-          {employee.name.title.trim()}
-          {/* <img alt={result.title} className="img-fluid" src={result.images.original.url} /> */}
-        </li>
-      ))}
+      {employeeRows}
     </ul>
   );
 }
