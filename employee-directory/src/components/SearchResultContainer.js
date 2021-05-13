@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import SearchForm from "./SearchForm";
 import ResultList from "./ResultList";
 import API from "../utils/API";
+import Container from "./Container/Container";
 
 class SearchResultContainer extends Component {
   state = {
@@ -36,15 +37,21 @@ class SearchResultContainer extends Component {
   };
 
   render() {
-    return (
-      <div>
+    return (<>
+      <Container>
+
         <SearchForm
           search={this.state.search}
           handleFormSubmit={this.handleFormSubmit}
           handleInputChange={this.handleInputChange}
         />
-        <ResultList results={this.state.results} />
-      </div>
+      </Container>
+
+      <Container>
+          <ResultList results={this.state.results} />
+      </Container>
+
+      </>
     );
   }
 }
