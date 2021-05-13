@@ -6,17 +6,18 @@ import API from "../utils/API";
 class SearchResultContainer extends Component {
   state = {
     search: "",
-    results: []
+    results: [],
+    filteredResults: []
   };
 
   // When this component mounts, search the Giphy API for pictures of kittens
   componentDidMount() {
-    this.searchGiphy("kittens");
+    this.searchGiphy();
   }
 
-  searchGiphy = query => {
-    API.search(query)
-      .then(res => this.setState({ results: res.data.data }))
+  searchGiphy = () => {
+    API.search()
+      .then(res => this.setState({ results: res.data.results }))
       .catch(err => console.log(err));
   };
 
@@ -31,7 +32,7 @@ class SearchResultContainer extends Component {
   // When the form is submitted, search the Giphy API for `this.state.search`
   handleFormSubmit = event => {
     event.preventDefault();
-    this.searchGiphy(this.state.search);
+    this.searchGiphy();
   };
 
   render() {
