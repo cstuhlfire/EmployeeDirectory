@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import SearchForm from "./SearchForm";
+import SearchForm from "./SearchForm/SearchForm";
 import ResultList from "./ResultList";
 import API from "../utils/API";
 import Container from "./Container/Container";
@@ -37,21 +37,17 @@ class SearchResultContainer extends Component {
   };
 
   render() {
-    return (<>
+    return (
+    <>
       <Container>
-
         <SearchForm
           search={this.state.search}
           handleFormSubmit={this.handleFormSubmit}
           handleInputChange={this.handleInputChange}
         />
+        <ResultList search={this.state.search} results={this.state.results} />
       </Container>
-
-      <Container>
-          <ResultList results={this.state.results} />
-      </Container>
-
-      </>
+    </>
     );
   }
 }

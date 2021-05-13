@@ -1,7 +1,6 @@
 import React from "react";
 import SearchResultContainer from "./components/SearchResultContainer";
 import Jumbotron from "./components/Jumbotron/Jumbotron";
-import Container from "./components/Container/Container";
 
 function App() {
   return(

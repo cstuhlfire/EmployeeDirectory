@@ -1,9 +1,11 @@
 import React from "react";
 
 function ResultList(props) {
-  const employees = props.results;
+  let employees = props.results;
 
-  // let notPurchased = groceries.filter((grocery) => grocery.purchased === false)
+  employees  = employees.filter((employee) => employee.name.first.toLowerCase().includes(props.search.toLowerCase()) === true || 
+                                              employee.name.last.toLowerCase().includes(props.search.toLowerCase()) === true);
+  console.log(employees);
 
   // map employees results array into table rows
   let employeeRows = employees.map(employee => (
