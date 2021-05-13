@@ -1,17 +1,16 @@
 import React, { Component } from "react";
 import SearchForm from "./SearchForm/SearchForm";
-import ResultList from "./ResultList";
+import ResultList from "./ResultList/ResultList";
 import API from "../utils/API";
 import Container from "./Container/Container";
 
 class SearchResultContainer extends Component {
   state = {
     search: "",
-    results: [],
-    filteredResults: []
+    results: []
   };
 
-  // When this component mounts, search the Giphy API for pictures of kittens
+  // When this component mounts, search the randomuser API for sample employees
   componentDidMount() {
     this.searchEmployees();
   }
@@ -30,7 +29,7 @@ class SearchResultContainer extends Component {
     });
   };
 
-  // When the form is submitted, search the Giphy API for `this.state.search`
+  // When the form is submitted, search the randomuser API for `this.state.search`
   handleFormSubmit = event => {
     event.preventDefault();
     this.searchEmployees();

@@ -5,8 +5,7 @@ function ResultList(props) {
 
   employees  = employees.filter((employee) => employee.name.first.toLowerCase().includes(props.search.toLowerCase()) === true || 
                                               employee.name.last.toLowerCase().includes(props.search.toLowerCase()) === true);
-  console.log(employees);
-
+ 
   // map employees results array into table rows
   let employeeRows = employees.map(employee => (
     <tr key={employee.cell}>      
@@ -31,7 +30,7 @@ function ResultList(props) {
             </tr>
           </thead>
           <tbody>
-            {/* add employee rows */}
+            {/* add rows */}
             {employeeRows}
           </tbody>
       </table>
