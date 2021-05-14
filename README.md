@@ -22,9 +22,8 @@ Sample employees are generated when the application loads. Enter text in the sea
  ascending or descending order. Click the button "Get New Set of Employees" to generate a list of 100 new employees.
 
 ## Screenshot
-![Screenshot](https://github.com/cstuhlfire/EmployeeDirectory/blob/main/EmployeeDirectory.gif)
+![Screenshot](./EmployeeDirectory.gif)
 
-![Screenshot](EmployeeDirectory.PNG)
 ## License_Details
 
 This project is licensed through: MIT
