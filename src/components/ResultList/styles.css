@@ -5,11 +5,11 @@
 }
 
 .custom-btn {
-    /* opacity: .80; */
+    opacity: .80;
     visibility: visible;
 }
 
 .custom-btn:hover {
-    /* opacity: 1; */
+    opacity: 1;
     cursor: pointer;
 }
