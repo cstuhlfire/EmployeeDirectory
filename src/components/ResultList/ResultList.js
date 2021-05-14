@@ -30,10 +30,12 @@ function ResultList(props) {
               <th scope="col">First Name
                 {/* <span className="custom-btn custom-btn-down" data-name="first" data-sort="asc" onClick={props.sortByName}>🔽</span> */}
                 <span className="custom-btn custom-btn-down" data-name="first" data-sort="asc" onClick={props.sortByName}>&#128317;</span>
-                <span className="custom-btn" data-name="first" data-sort="desc" onClick={props.sortByName}>&#128316;</span></th>
+                <span className="custom-btn" data-name="first" data-sort="desc" onClick={props.sortByName}>&#128316;</span>
+              </th>
               <th scope="col">Last Name
                 <span className="custom-btn custom-btn-down" data-name="last" data-sort="asc" onClick={props.sortByName}>&#128317;</span>
-                <span className="custom-btn" data-name="last" data-sort="desc" onClick={props.sortByName}>&#128316;</span></th>
+                <span className="custom-btn" data-name="last" data-sort="desc" onClick={props.sortByName}>&#128316;</span>
+              </th>
               <th scope="col">Email</th>
               <th scope="col">Cell Phone</th>
             </tr>
