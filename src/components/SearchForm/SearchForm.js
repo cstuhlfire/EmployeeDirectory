@@ -15,7 +15,7 @@ function SearchForm(props) {
             placeholder="Filter employees"
             id="search"
           />
-          <button onClick={props.sortByName} className="btn btn-primary mt-3">
+          <button onClick={props.handleGetNew} className="btn btn-primary mt-3">
             Get New Set of Employees
           </button>
         </div>

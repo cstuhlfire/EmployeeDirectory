@@ -37,12 +37,33 @@ class SearchResultContainer extends Component {
   };
 
   sortByName = event => {
-    let sortedResults;
-
+    let nameA;
+    let nameB;
+    let sortedResults = this.state.results;
     event.preventDefault();
 
-    sortedResults = [];
-    console.log(this.state.results);
+    let nameType = event.target.getAttribute("data-name");
+    
+    // sort by name
+    sortedResults.sort(function(a, b) {
+      if (nameType === "first") {
+        nameA = a.name.first.toUpperCase(); // ignore upper and lowercase
+        nameB = b.name.first.toUpperCase(); // ignore upper and lowercase
+      } else if (nameType === "last") {
+        nameA = a.name.last.toUpperCase(); // ignore upper and lowercase
+        nameB = b.name.last.toUpperCase(); // ignore upper and lowercase    
+      }
+
+      if (nameA < nameB) {
+        return -1;
+      }
+      if (nameA > nameB) {
+        return 1;
+      }
+      // names must be equal
+      return 0;
+    });
+
     this.setState({ results: sortedResults })
   }
 
@@ -54,9 +75,8 @@ class SearchResultContainer extends Component {
           search={this.state.search}
           handleGetNew={this.handleGetNew}
           handleInputChange={this.handleInputChange}
-          sortByName={this.sortByName}
         />
-        <ResultList search={this.state.search} results={this.state.results} />
+        <ResultList search={this.state.search} results={this.state.results} sortByName={this.sortByName}/>
       </Container>
     </>
     );

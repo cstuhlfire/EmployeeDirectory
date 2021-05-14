@@ -1,4 +1,5 @@
 import React from "react";
+import "./styles.css";
 
 function ResultList(props) {
   let employees = props.results;
@@ -23,8 +24,8 @@ function ResultList(props) {
           <thead>
             <tr>
               <th style={{textAlign: "center"}} scope="col">Image</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
+              <th scope="col">First<span className="custom-btn" data-name="first" onClick={props.sortByName}>🔽</span></th>
+              <th scope="col">Last<span className="custom-btn" data-name="last" onClick={props.sortByName}>🔽</span></th>
               <th scope="col">Email</th>
               <th scope="col">Cell Phone</th>
             </tr>

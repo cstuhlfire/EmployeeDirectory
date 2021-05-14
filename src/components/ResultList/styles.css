@@ -1,0 +1,8 @@
+.custom-btn {
+    padding-left: 10%;
+}
+
+.custom-btn:hover {
+    cursor: pointer;
+    opacity: 50%;
+}
