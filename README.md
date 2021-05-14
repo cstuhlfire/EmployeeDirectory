@@ -1,7 +1,7 @@
 # Employee Directory
 ## [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 ## Description 
-The Employee Directory app allows a user to view, sort, and filter a list of 100 empoyees at a time. The app is built in with the React framework and utilizes Bootstrap for styling. It accesses the randomuser API through AJAX to randomly generate 100 sample employees. The application is built in Javascript, html, and css. It is deployed in github pages.
+The Employee Directory app allows a user to view, sort, and filter a list of 100 empoyees at a time. The app is built with the React framework and utilizes Bootstrap for styling. It accesses the randomuser API through AJAX to randomly generate 100 sample employees. The application is built in Javascript, html, and css. It is deployed in github pages.
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
