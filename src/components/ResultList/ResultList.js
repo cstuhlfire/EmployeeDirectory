@@ -20,12 +20,19 @@ function ResultList(props) {
 
     return (
       // create header for table
+      <div>
+
+      <p><i>Click on the up and down arrows to sort by column</i></p>
       <table className="table table-bordered table-hover">
-          <thead>
+          <thead> 
             <tr>
               <th style={{textAlign: "center"}} scope="col">Image</th>
-              <th scope="col">First<span className="custom-btn" data-name="first" onClick={props.sortByName}>🔽</span></th>
-              <th scope="col">Last<span className="custom-btn" data-name="last" onClick={props.sortByName}>🔽</span></th>
+              <th scope="col">First Name
+                <span className="custom-btn custom-btn-down" data-name="first" data-sort="asc" onClick={props.sortByName}>🔽</span>
+                <span className="custom-btn" data-name="first" data-sort="desc" onClick={props.sortByName}>🔼</span></th>
+              <th scope="col">Last Name
+                <span className="custom-btn custom-btn-down" data-name="last" data-sort="asc" onClick={props.sortByName}>🔽</span>
+                <span className="custom-btn" data-name="last" data-sort="desc" onClick={props.sortByName}>🔼</span></th>
               <th scope="col">Email</th>
               <th scope="col">Cell Phone</th>
             </tr>
@@ -35,6 +42,8 @@ function ResultList(props) {
             {employeeRows}
           </tbody>
       </table>
+
+      </div>
   );
 }
 

@@ -12,7 +12,7 @@ function SearchForm(props) {
             name="search"
             type="text"
             className="form-control"
-            placeholder="Filter employees"
+            placeholder="Filter employees by first and last name"
             id="search"
           />
           <button onClick={props.handleGetNew} className="btn btn-primary mt-3">

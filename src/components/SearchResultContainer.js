@@ -43,6 +43,7 @@ class SearchResultContainer extends Component {
     event.preventDefault();
 
     let nameType = event.target.getAttribute("data-name");
+    let sortType = event.target.getAttribute("data-sort");
     
     // sort by name
     sortedResults.sort(function(a, b) {
@@ -52,13 +53,22 @@ class SearchResultContainer extends Component {
       } else if (nameType === "last") {
         nameA = a.name.last.toUpperCase(); // ignore upper and lowercase
         nameB = b.name.last.toUpperCase(); // ignore upper and lowercase    
-      }
+      } 
 
-      if (nameA < nameB) {
-        return -1;
-      }
-      if (nameA > nameB) {
-        return 1;
+      if (sortType === "asc") {
+        if (nameA < nameB) {
+          return -1;
+        }
+        if (nameA > nameB) {
+          return 1;
+        }
+      } else if (sortType === "desc") {
+        if (nameA < nameB) {
+          return 1;
+        }
+        if (nameA > nameB) {
+          return -1;
+        }
       }
       // names must be equal
       return 0;
@@ -71,12 +81,12 @@ class SearchResultContainer extends Component {
     return (
     <>
       <Container>
-        <SearchForm
-          search={this.state.search}
-          handleGetNew={this.handleGetNew}
-          handleInputChange={this.handleInputChange}
-        />
-        <ResultList search={this.state.search} results={this.state.results} sortByName={this.sortByName}/>
+        <SearchForm search={this.state.search}
+                    handleGetNew={this.handleGetNew}
+                    handleInputChange={this.handleInputChange}/>
+        <ResultList search={this.state.search} 
+                    results={this.state.results} 
+                    sortByName={this.sortByName}/>
       </Container>
     </>
     );
